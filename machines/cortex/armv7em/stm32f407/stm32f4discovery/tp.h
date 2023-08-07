@@ -73,6 +73,17 @@ FUNC(ButtonState, OS_CODE) readButton();
  */
 FUNC(void, OS_CODE) delay(CONST(uint32, AUTOMATIC) howMuch);
 
+/*
+ * Led init
+ */
+FUNC(void, OS_CODE) ledBootInit(void);
+FUNC(void, OS_CODE) ledBootOff(void);
+FUNC(void, OS_CODE) ledBootOn(void);
+
+FUNC(void, OS_CODE) ledinit(void);
+FUNC(void, OS_CODE) ledoff(void);
+FUNC(void, OS_CODE) ledon(void);
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus

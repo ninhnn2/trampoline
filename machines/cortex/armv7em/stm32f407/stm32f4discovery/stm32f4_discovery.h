@@ -166,6 +166,10 @@ void led_life_init();
 void led_life_on();
 void led_life_off();
 
+void led_boot_init();
+void led_boot_off();
+void led_boot_on();
+
 #ifdef __cplusplus
 }
 #endif
