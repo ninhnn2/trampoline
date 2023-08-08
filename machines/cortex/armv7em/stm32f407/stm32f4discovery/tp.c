@@ -10,7 +10,6 @@ extern volatile VAR(uint32, OS_VAR) tpl_time_counter;
 extern "C"{
 #endif // __cplusplus
 
-
 #define OS_START_SEC_CODE
 #include "tpl_memmap.h"
 /*
@@ -136,6 +135,17 @@ FUNC(void, OS_CODE) ledBootOff(void)
 {
   led_boot_off();
 }
+
+FUNC(void, OS_CODE) svDltInit(void)
+{
+  usartInit();
+}
+
+FUNC(void, OS_CODE) svDltSend(uint8_t c)
+{
+  usartSend(c);
+}
+
 
 #ifdef __cplusplus
 }

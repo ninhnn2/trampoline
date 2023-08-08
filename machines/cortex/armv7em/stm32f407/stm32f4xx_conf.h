@@ -32,7 +32,7 @@
 /* Includes ------------------------------------------------------------------*/
 /* Uncomment the line below to enable peripheral header file inclusion */
 //#include "stm32f4xx_adc.h"
-//#include "stm32f4xx_can.h"
+#include "stm32f4xx_can.h"
 //#include "stm32f4xx_crc.h"
 //#include "stm32f4xx_cryp.h"
 //#include "stm32f4xx_dac.h"
@@ -54,7 +54,7 @@
 //#include "stm32f4xx_spi.h"
 #include "stm32f4xx_syscfg.h"
 //#include "stm32f4xx_tim.h"
-//#include "stm32f4xx_usart.h"
+#include "stm32f4xx_usart.h"
 //#include "stm32f4xx_wwdg.h"
 #include "misc.h" /* High level functions for NVIC and SysTick (add-on to CMSIS functions) */
 

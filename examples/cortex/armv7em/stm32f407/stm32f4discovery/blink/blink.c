@@ -8,6 +8,7 @@ FUNC(int, OS_APPL_CODE) main(void)
 
   ledinit();
   ledBootInit();
+  svDltInit();
 
   StartOS(OSDEFAULTAPPMODE);
   return 0;
@@ -29,10 +30,9 @@ TASK(blink)
 
 TASK(life)
 {
-    // ledBootOn();
-    // for(long long i = 0; i < 2000000; i++);
-    // ledBootOff();
-    // for(long long i = 0; i < 2000000; i++);
+    svDltSend('1');
+    svDltSend('\r');
+    svDltSend('\n');
     TerminateTask();
 }
 #define APP_Task_life_STOP_SEC_CODE
@@ -52,7 +52,9 @@ FUNC(void, OS_CODE) PreTaskHook()
   TaskType task_id = 0;
   GetTaskID(&task_id);
   if (task_id == blink) {
-    ledBootOn();
+    svDltSend('2');
+    svDltSend('\r');
+    svDltSend('\n');
   }
 }
 
@@ -61,7 +63,9 @@ FUNC(void, OS_CODE) PostTaskHook()
   TaskType task_id = 0;
   GetTaskID(&task_id);
   if (task_id == blink) {
-    ledBootOff();
+    svDltSend('3');
+    svDltSend('\r');
+    svDltSend('\n');
   }
 }
 #define OS_STOP_SEC_CODE

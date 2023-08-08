@@ -170,6 +170,13 @@ void led_boot_init();
 void led_boot_off();
 void led_boot_on();
 
+/******************************************************************************
+* usart configuration
+*******************************************************************************/
+void usartInit(void);
+void usartSend(uint8_t c);
+
+
 #ifdef __cplusplus
 }
 #endif
